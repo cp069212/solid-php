@@ -1,6 +1,6 @@
 <?php
 
-class Ogg
+class Ogg 
 {
     private $filename;
 

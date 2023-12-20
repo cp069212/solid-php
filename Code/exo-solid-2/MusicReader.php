@@ -13,7 +13,7 @@ class MusicReader
         $this->filename = $filename;
     }
 
-    public function listen()
+    public function listen($filename)
     {
         $extension = pathinfo($this->filename, PATHINFO_EXTENSION);
         switch ($extension) {
@@ -29,4 +29,5 @@ class MusicReader
                 throw new \Exception('Aucun lecteur trouvé pour cette musique');
         }
     }
+
 }
