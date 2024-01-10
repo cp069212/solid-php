@@ -1,5 +1,7 @@
 <?php
 
+require_once 'EventInterface.php';
+
 class PushEvent implements EventInterface
 {
     public function name() : string
@@ -10,7 +12,7 @@ class PushEvent implements EventInterface
     public function fields() : array
     {
         return [
-            'name' => $this->name,
+            'name' => $this->name(),
             'priority' => 999,
         ];
     }
@@ -21,13 +23,5 @@ class PushEvent implements EventInterface
             'cost' => 0,
             'from' => 'https://github.com/api/v3/push',
         ];
-    }
-
-    /**
-     * This event is not actionnable
-     */
-    public function action() : array
-    {
-        return [];
     }
 }
